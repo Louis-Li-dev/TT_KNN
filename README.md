@@ -24,9 +24,18 @@ Once you clone the `geobleu` repository, place it in the appropriate directory i
 
 This setup ensures that the evaluation metric is correctly configured and ready for use.
 
+## How to run
+
+Import the [`ttknn`](./ttknn) directory from this repository and use the function named `temporal_knn_fit_predict`. The [`example.ipynb`](./example.ipynb) notebook demonstrates how to import and utilize the [`ttknn`](./ttknn) directory effectively.
+
 ## Installation
 
 To set up the required environment, simply install all necessary dependencies by running:
 
 ```bash
 pip install -r requirements.txt
+```
+## Contact
+Feel free to reach out to me for any questions or contact
+Email: yessir0621@gmail.com
+LinkedIn: https://www.linkedin.com/in/an-syu-li-10897a273/
