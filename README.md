@@ -1,12 +1,13 @@
-
+# Using the Temporal-Trajectory-based K Nearest Neighbor
+Algorithm to Predict Human Mobility Patterns
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-# Dataset
+## Dataset
 
 The dataset used in this project can be downloaded from the following link:
 
 [Download Dataset from Zenodo](https://zenodo.org/records/13237029)
 
-# Additional Packages and Setup
+## Additional Packages and Setup
 
 To run the evaluation metric, you will need to clone the `geobleu` repository. Follow these steps to get the necessary package:
 
@@ -16,7 +17,7 @@ Clone the repository for **Geobleu**, an evaluation metric used in this project:
 
 [Geobleu GitHub Repository](https://github.com/yahoojapan/geobleu)
 
-## Directory Setup
+### Directory Setup
 
 Once you clone the `geobleu` repository, place it in the appropriate directory in your project. The structure should look something like this:
 
@@ -24,7 +25,7 @@ Once you clone the `geobleu` repository, place it in the appropriate directory i
 
 This setup ensures that the evaluation metric is correctly configured and ready for use.
 
-# Installation
+## Installation
 
 To set up the required environment, simply install all necessary dependencies by running:
 
