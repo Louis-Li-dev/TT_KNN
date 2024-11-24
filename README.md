@@ -1,5 +1,4 @@
-# Using the Temporal-Trajectory-based K Nearest Neighbor
-Algorithm to Predict Human Mobility Patterns
+# Using the Temporal-Trajectory-based K Nearest Neighbor Algorithm to Predict Human Mobility Patterns
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ## Dataset
 
