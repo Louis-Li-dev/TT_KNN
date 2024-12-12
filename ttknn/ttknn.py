@@ -7,7 +7,8 @@ def temporal_knn_fit_predict(
     stride: int = 1,
     starting_coor: tuple = None,
     thresh: int = 4,
-    n_neighbor: int = 2,
+    n_neighbors: int = 2,
+    ith_nearest: int = -1,
     val_cols: list['str'] = ['x', 'y'],
     t_col: str = 't'
 ) -> pd.DataFrame:
@@ -29,7 +30,9 @@ def temporal_knn_fit_predict(
     thresh : int, optional, default=4
         A threshold for the outliers to be removed. If a place has been visited less than thresh, it is filtered out.
     n_neighbors : int, optional, default=2
-        The number of neighbors the model will find,
+        The number of neighbors the model will find.
+    ith_nearest : int, optional, default = -1
+        Find the ith nearest neighbor for the prediction. When it is set to -1, we find the least nearest. 
     val_cols : list['str'], optional, default=['x', 'y']
         A list of columns for the model to refer to. For example, in the mobility prediction task, x and y serve as coordinates in the dataframe
     t_col : str, optional, default = 't'
@@ -66,7 +69,7 @@ def temporal_knn_fit_predict(
         
         if not data.empty:
             data_dict[interval] = data.values.tolist()
-            model = NearestNeighbors(n_neighbors=n_neighbor, n_jobs=-1, algorithm='kd_tree', leaf_size=40)
+            model = NearestNeighbors(n_neighbors=n_neighbors, n_jobs=-1, algorithm='kd_tree', leaf_size=40)
             model.fit(data_dict[interval])
             model_dict[interval] = model
     
@@ -90,7 +93,7 @@ def temporal_knn_fit_predict(
             try:
                 _, indices = model_dict[interval].kneighbors([curr_coord])
                 # Select the nearest neighbor (excluding itself if present)
-                nearest_index = indices[0][-1]
+                nearest_index = indices[0][ith_nearest]
                 curr_coord = data_dict[interval][nearest_index]
             except Exception as e:
                 pass
