@@ -27,10 +27,11 @@ class Utility:
             self.library[name] = func
     def append_dummy(base_data: pd.DataFrame):
         '''
-            <h2> base_data </h2> <div><span> Concatenate the data frame with a blank row</span></div>
-            <h2> Example:  </h2> 
-            <div> A pandas data frame is passed in as a parameter base_data </div>
-            <div> The passed-in data frame base_data will be added with a new row with blank values filled with -1 </div>
+            ## base_data 
+            # Concatenate the data frame with a blank row
+            ## Example:  
+            A pandas data frame is passed in as a parameter base_data 
+            The passed-in data frame base_data will be added with a new row with blank values filled with -1 
         '''
         return pd.concat([base_data, pd.DataFrame(columns=base_data.columns, index=[0]).fillna(-1)], ignore_index=True)
     def to_dataframe(df: pd.DataFrame, date):
