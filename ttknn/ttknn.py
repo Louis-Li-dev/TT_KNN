@@ -62,7 +62,7 @@ def temporal_knn_fit_predict(
     
     for interval in model_intervals:
         # Extract data for the current interval using the specified columns
-        data = df[df['t'].isin(range(interval[0], interval[1]))][val_cols].drop_duplicates().reset_index(drop=True)
+        data = df[df[t_col].isin(range(interval[0], interval[1]))][val_cols].drop_duplicates().reset_index(drop=True)
         
         if not data.empty:
             data_dict[interval] = data.values.tolist()
@@ -96,7 +96,7 @@ def temporal_knn_fit_predict(
                 pass
     
         # Construct the result dictionary with dynamic column names
-        prediction = {'t': t_mod}
+        prediction = {t_col: t_mod}
         for idx, col in enumerate(val_cols):
             prediction[col] = curr_coord[idx]
         result.append(prediction)
