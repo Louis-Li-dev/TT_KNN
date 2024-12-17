@@ -1,6 +1,11 @@
 <h1>🚶‍♂️🗺️ Predicting Human Mobility Patterns Using the Temporal-Trajectory-based K Nearest Neighbor Algorithm</h1>
 
 <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+<a href="https://dl.acm.org/doi/10.1145/3681771.3699913">
+  <img src="https://img.shields.io/badge/ACM%20Paper-DOI%3A%2010.1145%2F3681771.3699913-blue" alt="ACM Paper DOI Badge">
+</a>
+
+
 
 <h2>📂 Dataset</h2>
 
