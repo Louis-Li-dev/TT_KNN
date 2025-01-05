@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='TT_KNN',
     version='1.0.0',
-    packages=find_packages(include=["ttknn", 'utility', 'utility.*']),
+    packages=find_packages(include=["ttknn", "TT_KNN", 'utility', 'utility.*']),
     author="AnSyu Li",
     author_email="yessir0621@gmail.com",  
     license="MIT",
