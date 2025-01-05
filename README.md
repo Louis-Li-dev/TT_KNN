@@ -42,6 +42,8 @@
 <p>To install all the necessary dependencies, run the following command:</p>
 
 <pre><code>pip install -r requirements.txt</code></pre>
+or
+<pre><code>pip install git+https://github.com/Louis-Li-dev/TT_KNN</code></pre>
 
 <h2>📞 Contact</h2>
 
