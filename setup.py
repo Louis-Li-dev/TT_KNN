@@ -17,7 +17,7 @@ setup(
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",  # Replace with your license
+        "License :: OSI Approved :: MIT License",  
         "Operating System :: OS Independent",
     ],
 
