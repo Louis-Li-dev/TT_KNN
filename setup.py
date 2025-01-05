@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     author="AnSyu Li",
     install_requires=[
-        "pandas",
+        "pandas>=2.0.3",
         "tqdm",
         "scikit-learn",
         "matplotlib",
