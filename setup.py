@@ -7,9 +7,7 @@ setup(
     author="AnSyu Li",
     author_email="yessir0621@gmail.com",  
     description="A package for temporal trajectory analysis using K-Nearest Neighbors",
-    long_description=open("README.md").read(), 
-    long_description_content_type="text/markdown", 
-    url="https://github.com/",  
+    url="https://github.com/Louis-Li-dev/TT_KNN",  
     install_requires=[
         "pandas",
         "tqdm",
