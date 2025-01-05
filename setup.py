@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='TT_KNN',  # Package name
-    version='1.0.0',  # Version number
+    version='1.1.0',  # Version number
     packages=find_packages(include=['ttknn', 'ttknn.*']),  # Use find_packages to include submodules
     author="AnSyu Li",
     author_email="yessir0621@gmail.com",
