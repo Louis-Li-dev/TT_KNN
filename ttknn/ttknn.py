@@ -82,12 +82,11 @@ def temporal_knn_fit_predict(
     # Count occurrences of the unique combinations in `val_cols`
     counter = df[val_cols].value_counts()
     max_counts = counter.max()
-    if max_counts < thresh:
+    if max_counts <= thresh:
         warnings.warn(f"Frequency below the predefined thresh. Temporarily set its max value {max_counts} as the thresh")          
         top = counter[counter >= max_counts - 1].index.tolist()
     else:
         top = counter[counter > thresh].index.tolist()
-    
     
     # Filter out rows that do not have top-occurring coordinate combinations
     df = df[df.apply(lambda row: tuple(row[col] for col in val_cols) in top, axis=1)]
