@@ -12,11 +12,12 @@ def temporal_knn_fit_predict(
     val_cols: list['str'] = ['x', 'y'],
     t_col: str = 't'
 ) -> pd.DataFrame:
-    """
+    """    
     Predict the coordinates of a point over time using K-nearest neighbors.
 
     Parameters
-    ----------
+    ---
+
     df : pd.DataFrame
         DataFrame containing coordinate columns and a 'd' column indicating time intervals.
     start_t : int, optional, default=0
@@ -37,10 +38,35 @@ def temporal_knn_fit_predict(
         A list of columns for the model to refer to. For example, in the mobility prediction task, x and y serve as coordinates in the dataframe
     t_col : str, optional, default = 't'
         The timestamp column.
+
     Returns
-    -------
+    --
     pd.DataFrame
         DataFrame containing predicted coordinates for each time step.
+
+    Example
+    --
+    >>> %pip install https://github.com/yahoojapan/geobleu
+    >>> from ttknn import ttknn
+    >>> from ttknn.light_utility import Utility
+    >>> import geobleu
+    >>> df = pd.read_csv('./data.csv')
+    >>> all_uids = df.uid.unique()
+    >>> train_df, test_df = Utility.test_train_split(df, 60)
+
+    >>> num_cpus = multiprocessing.cpu_count()
+    >>> dtw_score = {}
+    >>> for uid in tqdm(all_uids[:3000]):
+    >>>    sample = train_df[train_df.uid == uid]
+    >>>    test_sample = test_df[test_df.uid == uid]
+
+    >>>    submission_df = test_sample[['d', 't']]
+    >>>    predicted = ttknn.temporal_knn_fit_predict(df=sample)
+    >>>    s1 = Utility.to_eval_format(submission_df.merge(predicted, on='t', how='left'))
+    >>>    s2 = Utility.to_eval_format(test_sample)
+    >>>    dtw_score[uid] = geobleu.calc_dtw(s1, s2, processes=num_cpus)
+
+    ```
     """
     if not isinstance(val_cols, list) or len(val_cols) < 1:
         raise ValueError("`val_cols` must be a list with at least one column name.")
