@@ -1,2 +1,2 @@
 from .ttknn import temporal_knn_fit_predict
-from .light_utility import Utility
+from .light_utility import Utility, write_unseen_rows

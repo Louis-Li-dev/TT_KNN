@@ -1,7 +1,33 @@
 
 import pandas as pd
 from copy import deepcopy
+import os
 from sklearn.multioutput import MultiOutputRegressor # type: ignore
+def write_unseen_rows(intermediate_df, file_path):
+    """
+    Write only unseen rows to the output file.
+    
+    Parameters:
+    - intermediate_df: pandas.DataFrame, the new data to be written.
+    - file_path: str, path to the output file.
+    """
+    if os.path.exists(file_path):
+        # Load existing data
+        existing_df = pd.read_csv(file_path)
+        
+        # Concatenate existing and new data, and drop duplicates
+        combined_df = pd.concat([existing_df, intermediate_df], ignore_index=True).drop_duplicates()
+        
+        # Identify new rows by excluding existing rows
+        unseen_rows = combined_df[len(existing_df):]
+    else:
+        # If the file doesn't exist, all rows are unseen
+        unseen_rows = intermediate_df
+
+    # Append only unseen rows to the file
+    if not unseen_rows.empty:
+        unseen_rows.to_csv(file_path, mode='a', header=not os.path.exists(file_path), index=False)
+
 class Utility:
     def __init__(self, **arg):
         '''
