@@ -41,7 +41,11 @@ or
 ```bash
 pip install git+https://github.com/Louis-Li-dev/TT_KNN
 ```
-
+## Testing and Experiment
+In directory `tests`,
+```bash
+  python run_experiment.py --user_range 3000 --data_folder ../cityB-dataset --result_folder ../result
+```
 ## Contact
 
 Feel free to reach out if you have any questions or need assistance:
