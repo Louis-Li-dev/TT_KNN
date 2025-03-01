@@ -2,7 +2,7 @@
 # Predicting Human Mobility Patterns Using the Temporal-Trajectory-based K Nearest Neighbor Algorithm
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)  
-![ACM Paper DOI Badge](https://img.shields.io/badge/ACM%20Paper-DOI%3A%2010.1145%2F3681771.3699913-blue)
+[![ACM Paper DOI Badge](https://img.shields.io/badge/ACM%20Paper-DOI%3A%2010.1145%2F3681771.3699913-blue)](https://dl.acm.org/doi/10.1145/3681771.3699913)
 
 ## Architecture
 
@@ -45,6 +45,26 @@ pip install git+https://github.com/Louis-Li-dev/TT_KNN
 In directory `tests`,
 ```bash
   python run_experiment.py --user_range 3000 --data_folder ../cityB-dataset --result_folder ../result
+```
+## Citation
+```bibtex
+@inproceedings{10.1145/3681771.3699913,
+  author = {Li, An-Syu and Meng, Ling-Huan and Zhong, Yu-Ling and Chen, Yi-Chung and Kawakami, Tomoya},
+  title = {Using the Temporal-Trajectory-based K Nearest Neighbor Algorithm to Predict Human Mobility Patterns},
+  year = {2024},
+  isbn = {9798400711503},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3681771.3699913},
+  doi = {10.1145/3681771.3699913},
+  abstract = {Researchers are increasingly applying AI to predict the daily routines of individuals and their corresponding trajectories (referred to as mobility prediction), due to its considerable potential for commercial activities and public administration. However, most previous studies focused exclusively on model theory or design without considering the specific characteristics of human flow trajectories. In this study, we analyzed historical data to identify three factors that play key roles in human mobility. Based on these factors, we developed a temporal-trajectory-based K-nearest neighbor algorithm to predict human flow trajectories. Experimental simulations demonstrated the effectiveness of the proposed scheme when applied to the HuMob Challenge 2024 dataset.},
+  booktitle = {Proceedings of the 2nd ACM SIGSPATIAL International Workshop on Human Mobility Prediction Challenge},
+  pages = {25–28},
+  numpages = {4},
+  keywords = {Human mobility, KNN, Machine learning},
+  location = {Atlanta, GA, USA},
+  series = {HuMob'24}
+}
 ```
 ## Contact
 
